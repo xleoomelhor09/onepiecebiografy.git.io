@@ -1,0 +1,381 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Droid Serif', serif;
+    line-height: 1.6;
+    padding-top: 80px;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    background: url('background.jpg') no-repeat center center fixed, 
+                linear-gradient(to right, #023e8a, #0077b6);
+    background-size: cover;
+    color: #333;
+}
+
+body, html {
+    height: 100vh;
+    max-height: 100vh; 
+    overflow-y: hidden; 
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    min-height: 101vh;
+}
+
+.header-content {
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header, .header-content {
+    overflow: hidden; 
+}
+
+header {
+    background: rgba(0, 95, 115, 0.8);
+    color: white;
+    display: flex;
+    width: 100%;
+    height: 80px;  
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mugiwara-logo-container {
+    width: 70px;  
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; 
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 10px;
+    transform: translateX(-5px);
+}
+
+#mugiwara-logo {
+    width: 90%; 
+    height: auto;
+    margin-left: 5px;
+}
+
+.one-piece-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background-image: linear-gradient(to right, orange, gold);
+    border-radius: 5px;  
+    padding: 15px;  
+    width: 200px;  
+    height: 65px;  
+    transform: translateX(-35px);
+    margin: auto;  
+}
+
+#one-piece-logo {
+    max-width: 100%; 
+    max-height: 100%;
+    height: auto;
+}
+
+.logo-container, h1, .one-piece-logo-container {
+    margin: 0 5px;  
+    padding: 0;
+}
+
+.mugiwara-logo-container, .one-piece-logo-container, h1 {
+    margin: 0;  
+    padding: 0;
+}
+
+.logo-container img {
+    width: auto; 
+    height: 100%; 
+}
+
+.sidebar {
+    width: 220px;
+    height: calc(100vh - 80px);  
+    position: fixed;
+    left: 0;
+    top: 80px; 
+    overflow-y: auto;
+    z-index: 5;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 10px;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px; 
+    padding-right: 5px;
+}
+
+.sidebar ul li a {
+    display: block;
+    width: calc(100% - 10px); 
+    height: 120px;
+    border: 1px solid #1b1717;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f8f9fa;
+}
+
+.sidebar ul li a img {
+    display: block;
+    width: 100%;  
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.3s; 
+}
+
+.sidebar ul li a:hover img {
+    transform: scale(1.1);
+} 
+
+main {
+    margin-top: 80px;  
+    margin-left: 220px; 
+    padding: 20px;
+    width: calc(100% - 220px);  
+    height: calc(100vh - 80px);  
+    overflow-y: auto;  
+    position: relative;
+    z-index: 1;
+}
+
+#mugiwara-logo, #one-piece-logo {
+    height: 50px; 
+    margin-right: 10px;
+}
+
+#one-piece-logo {
+    margin: 0 auto;
+}
+
+.character-bio {
+     display: flex;
+    min-height: 100vh;  
+    
+}
+
+.character-photo {
+    flex: 1;
+    height: 100vh;  
+    overflow: hidden;
+}
+
+.character-photo img {
+    width: 100%;
+    height: 100%; 
+    border-radius: 15px; 
+    object-fit: cover;  
+    display: block;  
+}
+
+.character-img {
+    animation: slideInLeft 0.8s forwards; 
+}
+
+.character-img, .bio-text {
+    display: none;  
+    opacity: 0;     
+    transition: opacity 0.5s ease-in-out; 
+}
+
+.bio-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    width: 50%;  
+    height: auto;  
+    padding: 10px;
+    margin: auto; 
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    border-radius: 20px;
+    box-shadow: 0 0 0 2px rgb(61, 155, 199), 0 0 0 5px rgb(34, 85, 102), 0 0 0 8px rgb(18, 41, 66);
+    background-image: linear-gradient(to top, #000000, #3b3b3b);
+    color: white;
+    position: relative;
+    overflow-y: auto;
+    z-index: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+.text-container {
+    position: relative;
+    padding: 10px
+}
+
+.text-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #c9b58a;
+    border-radius: 20px;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+#bio-luffy .text-container::before {
+    background-image: linear-gradient(to top, #5a0808, #c70b0b);
+}
+
+#bio-zoro .text-container::before {
+    background-image: linear-gradient(to top, #0b3b0fd7, #1ec91e);
+}
+
+#bio-nami .text-container::before {
+    background-image: linear-gradient(to top, #7e3f03e3, #ce6a0e);
+}
+
+#bio-sanji .text-container::before {
+    background-image: linear-gradient(to top, #0d3870e3, #307dd4);
+}
+
+#bio-usopp .text-container::before {
+    background-image: linear-gradient(to top, #b1ae08, #e0cb12);
+}
+
+#bio-chopper .text-container::before {
+    background-image: linear-gradient(to top, #633a4d, #c26590);
+}
+
+#bio-robin .text-container::before {
+    background-image: linear-gradient(to top, #480866, #980aeb);
+}
+
+#bio-franky .text-container::before {
+    background-image: linear-gradient(to top, #2c1a06, #4e2605);
+}
+
+#bio-brook .text-container::before {
+    background-image: linear-gradient(to top, #5c5c5c, #ffffff);
+}
+
+#bio-jinbe .text-container::before {
+    background-image: linear-gradient(to top, #05595f, #10e3eb);
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+footer {
+    clear: both; 
+    position: relative;  
+    z-index: 10;
+}
+
+
+h1 {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 38px; 
+    font-weight: bold; 
+    color: #1a1a1a; 
+    text-align: center; 
+    margin: 20px 0; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background-color: rgba(216, 197, 163, 0.8);
+    border-radius: 20px;
+    padding: 0; 
+    background-image: linear-gradient(to right, #007bff, #289abd);
+    border-bottom: 5px solid black;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 38px; 
+    font-weight: bold; 
+    color: #1a1a1a; 
+    text-align: center; 
+    margin: 20px 0; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background-color: rgba(216, 197, 163, 0.8);
+    border-radius: 20px;
+    padding: 0; 
+    background-image: linear-gradient(to right, #da9c3f, #d3d016);
+    border-bottom: 5px solid black;
+}
+
+h3 {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    text-align: justify;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-left, .header-center, .header-right {
+        flex-direction: column;
+        flex: none;
+    }
+
+    #mugiwara-logo, #one-piece-logo, h1 {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-left: 0;
+    }
+}
